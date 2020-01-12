@@ -17,12 +17,13 @@ class OnboardingVC: UIViewController {
     let locationManager = CLLocationManager()
     
     var logoImageView = ZALogoView(frame: .zero)
-    var postcodeTextField = ZATextField(placeholder: "Enter your post code", returnKeyType: .done)
-    var locationButton = ZAButton(title: "Locate me")
+    var postcodeTextField = ZATextField(placeholder: Constants.Strings.postCodePlaceholder, returnKeyType: .done)
+    var locationButton = ZAButton(title: Constants.Strings.locateMeBtn)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        LocationService.shared.requestLocationPermissions()
         setupUI()
         dismissKeyboardTapGesture()
         
@@ -81,20 +82,20 @@ class OnboardingVC: UIViewController {
         showLoadingView()
         
         guard let postCode = postcodeTextField.text, !postCode.isEmpty else {
-            showErrorDialog(title: "Oops !", message: "You need to type a postcode 😄")
+            showErrorDialog(title: Constants.Errors.validationTitle, message: Constants.Errors.postCodeValidation)
             return
         }
         
-        LocationService.shared.requestLocationPermissions()
         LocationService.shared.getLocationByPostCode(with: postCode) { [weak self] result in
             guard let self = self else { return }
             
+            self.dismissLoadingView()
+            
             switch result {
             case .success(_):
-                self.dismissLoadingView()
                 self.navigateAway()
             case .failure(let error):
-                self.showErrorDialog(title: "Something went wrong", message: error.rawValue)
+                self.showErrorDialog( title: Constants.Errors.genericTitle, message: error.rawValue)
             }
         }
     }

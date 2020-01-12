@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  ZomatoApp
+
+  Created by German Hernandez on 12/01/2020.
+  Copyright © 2020 German Hernandez. All rights reserved.
+*/
+
+"Enter your post code" = "Enter your post code";
+"Locate me" = "Locate me";
+"Oops !" = "Oops !";
+"You need to type a postcode 😄": "You need to type a postcode 😄";
+"Something went wrong": "Something went wrong"
+"Dismiss": "Dismiss"

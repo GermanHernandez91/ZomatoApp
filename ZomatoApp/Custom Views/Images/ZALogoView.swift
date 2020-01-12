@@ -22,7 +22,7 @@ class ZALogoView: UIImageView {
     private func configure() {
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        image = UIImage(named: "logo")
+        image = UIImage(named: Constants.Images.logoImage)
     }
 
 }

@@ -14,7 +14,7 @@ extension UIViewController {
     
     func showErrorDialog(title: String, message: String) {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Dismiss", style: .default))
+        ac.addAction(UIAlertAction(title: Constants.Errors.alertDismissTitle, style: .default))
         
         present(ac, animated: true)
     }
