@@ -28,6 +28,9 @@
 		77F53FB723CB84E0000B2340 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53FB623CB84DF000B2340 /* NetworkManager.swift */; };
 		77F53FB923CB8641000B2340 /* ZANetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53FB823CB8641000B2340 /* ZANetworkError.swift */; };
 		77F53FC223CB89C7000B2340 /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53FC123CB89C7000B2340 /* Cuisine.swift */; };
+		77F53FC523CB988E000B2340 /* CuisineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53FC423CB988E000B2340 /* CuisineCell.swift */; };
+		77F53FC823CB98DE000B2340 /* ZATitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53FC723CB98DE000B2340 /* ZATitleLabel.swift */; };
+		77F53FCF23CBB8E0000B2340 /* ZAHeadlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53FCE23CBB8E0000B2340 /* ZAHeadlineLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		77F53FB623CB84DF000B2340 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		77F53FB823CB8641000B2340 /* ZANetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZANetworkError.swift; sourceTree = "<group>"; };
 		77F53FC123CB89C7000B2340 /* Cuisine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cuisine.swift; sourceTree = "<group>"; };
+		77F53FC423CB988E000B2340 /* CuisineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisineCell.swift; sourceTree = "<group>"; };
+		77F53FC723CB98DE000B2340 /* ZATitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZATitleLabel.swift; sourceTree = "<group>"; };
+		77F53FCE23CBB8E0000B2340 /* ZAHeadlineLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAHeadlineLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,8 @@
 		77F53F7C23CB435F000B2340 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				77F53FC623CB98BD000B2340 /* Labels */,
+				77F53FC323CB9872000B2340 /* Cells */,
 				77F53F8323CB4ABF000B2340 /* Buttons */,
 				77F53F8023CB4708000B2340 /* TextFields */,
 				77F53F7D23CB4369000B2340 /* Images */,
@@ -216,6 +224,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		77F53FC323CB9872000B2340 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				77F53FC423CB988E000B2340 /* CuisineCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		77F53FC623CB98BD000B2340 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				77F53FC723CB98DE000B2340 /* ZATitleLabel.swift */,
+				77F53FCE23CBB8E0000B2340 /* ZAHeadlineLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -289,6 +314,7 @@
 			files = (
 				77F53FB023CB7CEE000B2340 /* ProfileVC.swift in Sources */,
 				77F53FB423CB8409000B2340 /* Environment.swift in Sources */,
+				77F53FCF23CBB8E0000B2340 /* ZAHeadlineLabel.swift in Sources */,
 				77F53FB923CB8641000B2340 /* ZANetworkError.swift in Sources */,
 				77F53F6423CB3E03000B2340 /* AppDelegate.swift in Sources */,
 				77F53F8E23CB58B0000B2340 /* Keys.swift in Sources */,
@@ -300,6 +326,8 @@
 				77F53F7B23CB3FA3000B2340 /* OnboardingVC.swift in Sources */,
 				77F53FB723CB84E0000B2340 /* NetworkManager.swift in Sources */,
 				77F53F9A23CB5D53000B2340 /* ZALocationError.swift in Sources */,
+				77F53FC523CB988E000B2340 /* CuisineCell.swift in Sources */,
+				77F53FC823CB98DE000B2340 /* ZATitleLabel.swift in Sources */,
 				77F53F7F23CB4385000B2340 /* ZALogoView.swift in Sources */,
 				77F53F9623CB5B7C000B2340 /* LocationService.swift in Sources */,
 				77F53FC223CB89C7000B2340 /* Cuisine.swift in Sources */,

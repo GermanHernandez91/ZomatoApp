@@ -56,7 +56,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func createTabBar() -> UITabBarController {
         let tabBar = UITabBarController()
-        UITabBar.appearance().tintColor = .systemPurple
+        UITabBar.appearance().tintColor = .systemBlue
         tabBar.viewControllers = [
             createRestaurantListVC(),
             createSearchVC(),

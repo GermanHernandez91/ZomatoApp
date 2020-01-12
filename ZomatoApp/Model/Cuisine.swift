@@ -16,7 +16,7 @@ struct CuisineElement: Codable {
     let cuisine: Cuisine
 }
 
-struct Cuisine: Codable {
+struct Cuisine: Codable, Hashable {
     let cuisineId: Int
     let cuisineName: String
 }
