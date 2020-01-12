@@ -2,6 +2,9 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+## Environment
+Utilities/Environment.swift
+
 ## User settings
 xcuserdata/
 

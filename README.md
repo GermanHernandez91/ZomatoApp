@@ -8,6 +8,18 @@ Users can see restaurant details, gallery and reviews. They can also create an a
 
 THIS APP IS JUST FOR DEVELOPMENT PURPOSES.
 
+## Configuration
+
+In order to use your own zomato public api key, you need to create a file under Utilities called Environment and it should looks like this:
+
+```
+struct Environment {
+    struct Variables {
+        static let zomatoApiKey = ""
+    }
+}
+```
+
 ## Features
 
 * No third libraries
