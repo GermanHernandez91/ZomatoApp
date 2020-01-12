@@ -10,6 +10,6 @@ import Foundation
 
 struct Environment {
     struct Variables {
-        static let zomatoApiKey = "6b0adc0946448bbd4b19a22b936b0615"
+        static let zomatoApiKey = ""
     }
 }
