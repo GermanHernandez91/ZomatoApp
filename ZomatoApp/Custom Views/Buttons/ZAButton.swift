@@ -30,7 +30,7 @@ class ZAButton: UIButton {
     private func configure() {
         layer.cornerRadius = 10
         setTitleColor(.white, for: .normal)
-        backgroundColor = UIColor(named: "darkBlue") ?? UIColor.systemPurple
+        backgroundColor = .systemPurple
         titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
         translatesAutoresizingMaskIntoConstraints = false
     }

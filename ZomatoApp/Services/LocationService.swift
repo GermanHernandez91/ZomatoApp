@@ -23,6 +23,14 @@ class LocationService {
         locationManager.requestAlwaysAuthorization()
     }
     
+    func getLatitude() -> String? {
+        return defaults.string(forKey: Keys.latitude)
+    }
+    
+    func getLongitude() -> String? {
+        return defaults.string(forKey: Keys.longitude)
+    }
+    
     func locationIsStored() -> Bool {
         return defaults.string(forKey: Keys.city) != nil ? true : false
     }

@@ -1,5 +1,5 @@
 //
-//  Keys.swift
+//  Environment.swift
 //  ZomatoApp
 //
 //  Created by German Hernandez on 12/01/2020.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Keys {
-    static let city = "city"
-    static let latitude = "latitude"
-    static let longitude = "longitude"
+struct Environment {
+    struct Variables {
+        static let zomatoApiKey = "6b0adc0946448bbd4b19a22b936b0615"
+    }
 }

@@ -24,10 +24,46 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func showInitialViewController() -> UIViewController {
         if (LocationService.shared.locationIsStored()) {
-            return TestVC();
+            return createTabBar();
         }
         
         return OnboardingVC();
+    }
+    
+    func createProfileVC() -> UINavigationController {
+        let profileVC = ProfileVC()
+        profileVC.title = "Profile"
+        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.circle.fill"), tag: 2)
+        
+        return UINavigationController(rootViewController: profileVC)
+    }
+    
+    func createSearchVC() -> UINavigationController {
+        let searchVC = SearchVC()
+        searchVC.title = "Search"
+        searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
+        
+        return UINavigationController(rootViewController: searchVC)
+    }
+    
+    func createRestaurantListVC() -> UINavigationController {
+        let restaurantListVC = RestaurantListVC()
+        restaurantListVC.title = "Restaurants"
+        restaurantListVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.fill"), tag: 0)
+        
+        return UINavigationController(rootViewController: restaurantListVC)
+    }
+    
+    func createTabBar() -> UITabBarController {
+        let tabBar = UITabBarController()
+        UITabBar.appearance().tintColor = .systemPurple
+        tabBar.viewControllers = [
+            createRestaurantListVC(),
+            createSearchVC(),
+            createProfileVC()
+        ]
+        
+        return tabBar
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

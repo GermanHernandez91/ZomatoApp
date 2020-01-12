@@ -101,7 +101,7 @@ class OnboardingVC: UIViewController {
     }
     
     func navigateAway() {
-        let destVC = TestVC()
+        let destVC = RestaurantListVC()
         destVC.modalPresentationStyle = .fullScreen
         present(destVC, animated: true)
     }

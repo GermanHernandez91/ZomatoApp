@@ -13,10 +13,12 @@ fileprivate var containerView: UIView!
 extension UIViewController {
     
     func showErrorDialog(title: String, message: String) {
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: Constants.Errors.alertDismissTitle, style: .default))
-        
-        present(ac, animated: true)
+        DispatchQueue.main.async {
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: Constants.Errors.alertDismissTitle, style: .default))
+            
+            self.present(ac, animated: true)
+        }
     }
     
     func dismissKeyboardTapGesture() {
@@ -48,8 +50,10 @@ extension UIViewController {
     
     func dismissLoadingView() {
         DispatchQueue.main.async {
-            containerView.removeFromSuperview()
-            containerView = nil
+            if containerView != nil {
+                containerView.removeFromSuperview()
+                containerView = nil
+            }
         }
     }
     
