@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		77F53F6423CB3E03000B2340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53F6323CB3E03000B2340 /* AppDelegate.swift */; };
 		77F53F6623CB3E03000B2340 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53F6523CB3E03000B2340 /* SceneDelegate.swift */; };
-		77F53F6823CB3E03000B2340 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53F6723CB3E03000B2340 /* ViewController.swift */; };
-		77F53F6B23CB3E03000B2340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77F53F6923CB3E03000B2340 /* Main.storyboard */; };
 		77F53F6D23CB3E06000B2340 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77F53F6C23CB3E06000B2340 /* Assets.xcassets */; };
 		77F53F7023CB3E06000B2340 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77F53F6E23CB3E06000B2340 /* LaunchScreen.storyboard */; };
+		77F53F7B23CB3FA3000B2340 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53F7A23CB3FA3000B2340 /* OnboardingVC.swift */; };
+		77F53F7F23CB4385000B2340 /* ZALogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53F7E23CB4385000B2340 /* ZALogoView.swift */; };
+		77F53F8223CB472E000B2340 /* ZATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53F8123CB472E000B2340 /* ZATextField.swift */; };
+		77F53F8523CB4AD4000B2340 /* ZAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53F8423CB4AD4000B2340 /* ZAButton.swift */; };
+		77F53F8823CB5043000B2340 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53F8723CB5043000B2340 /* UIViewController+Ext.swift */; };
+		77F53F8E23CB58B0000B2340 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53F8D23CB58B0000B2340 /* Keys.swift */; };
+		77F53F9623CB5B7C000B2340 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53F9523CB5B7C000B2340 /* LocationService.swift */; };
+		77F53F9A23CB5D53000B2340 /* ZALocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53F9923CB5D53000B2340 /* ZALocationError.swift */; };
+		77F53FA123CB5FA4000B2340 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53FA023CB5FA4000B2340 /* TestVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		77F53F6023CB3E03000B2340 /* ZomatoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZomatoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F53F6323CB3E03000B2340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F53F6523CB3E03000B2340 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		77F53F6723CB3E03000B2340 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		77F53F6A23CB3E03000B2340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77F53F6C23CB3E06000B2340 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77F53F6F23CB3E06000B2340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77F53F7123CB3E06000B2340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77F53F7A23CB3FA3000B2340 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		77F53F7E23CB4385000B2340 /* ZALogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZALogoView.swift; sourceTree = "<group>"; };
+		77F53F8123CB472E000B2340 /* ZATextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZATextField.swift; sourceTree = "<group>"; };
+		77F53F8423CB4AD4000B2340 /* ZAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAButton.swift; sourceTree = "<group>"; };
+		77F53F8723CB5043000B2340 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		77F53F8D23CB58B0000B2340 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		77F53F9523CB5B7C000B2340 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		77F53F9923CB5D53000B2340 /* ZALocationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZALocationError.swift; sourceTree = "<group>"; };
+		77F53FA023CB5FA4000B2340 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,110 @@
 		77F53F6223CB3E03000B2340 /* ZomatoApp */ = {
 			isa = PBXGroup;
 			children = (
-				77F53F6323CB3E03000B2340 /* AppDelegate.swift */,
-				77F53F6523CB3E03000B2340 /* SceneDelegate.swift */,
-				77F53F6723CB3E03000B2340 /* ViewController.swift */,
-				77F53F6923CB3E03000B2340 /* Main.storyboard */,
-				77F53F6C23CB3E06000B2340 /* Assets.xcassets */,
-				77F53F6E23CB3E06000B2340 /* LaunchScreen.storyboard */,
-				77F53F7123CB3E06000B2340 /* Info.plist */,
+				77F53F8C23CB58A6000B2340 /* Utilities */,
+				77F53F9423CB5B73000B2340 /* Services */,
+				77F53F8623CB5032000B2340 /* Extensions */,
+				77F53F7C23CB435F000B2340 /* Custom Views */,
+				77F53F7923CB3F8B000B2340 /* Screens */,
+				77F53F7823CB3F3E000B2340 /* Resources */,
+				77F53F7723CB3F2D000B2340 /* Support */,
 			);
 			path = ZomatoApp;
+			sourceTree = "<group>";
+		};
+		77F53F7723CB3F2D000B2340 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				77F53F7123CB3E06000B2340 /* Info.plist */,
+				77F53F6323CB3E03000B2340 /* AppDelegate.swift */,
+				77F53F6523CB3E03000B2340 /* SceneDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		77F53F7823CB3F3E000B2340 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				77F53F6C23CB3E06000B2340 /* Assets.xcassets */,
+				77F53F6E23CB3E06000B2340 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		77F53F7923CB3F8B000B2340 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				77F53F7A23CB3FA3000B2340 /* OnboardingVC.swift */,
+				77F53FA023CB5FA4000B2340 /* TestVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		77F53F7C23CB435F000B2340 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				77F53F8323CB4ABF000B2340 /* Buttons */,
+				77F53F8023CB4708000B2340 /* TextFields */,
+				77F53F7D23CB4369000B2340 /* Images */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		77F53F7D23CB4369000B2340 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				77F53F7E23CB4385000B2340 /* ZALogoView.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		77F53F8023CB4708000B2340 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				77F53F8123CB472E000B2340 /* ZATextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		77F53F8323CB4ABF000B2340 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				77F53F8423CB4AD4000B2340 /* ZAButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		77F53F8623CB5032000B2340 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				77F53F8723CB5043000B2340 /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		77F53F8C23CB58A6000B2340 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				77F53F9823CB5D48000B2340 /* Errors */,
+				77F53F8D23CB58B0000B2340 /* Keys.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		77F53F9423CB5B73000B2340 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				77F53F9523CB5B7C000B2340 /* LocationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		77F53F9823CB5D48000B2340 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				77F53F9923CB5D53000B2340 /* ZALocationError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +236,6 @@
 			files = (
 				77F53F7023CB3E06000B2340 /* LaunchScreen.storyboard in Resources */,
 				77F53F6D23CB3E06000B2340 /* Assets.xcassets in Resources */,
-				77F53F6B23CB3E03000B2340 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +246,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77F53F6823CB3E03000B2340 /* ViewController.swift in Sources */,
 				77F53F6423CB3E03000B2340 /* AppDelegate.swift in Sources */,
+				77F53F8E23CB58B0000B2340 /* Keys.swift in Sources */,
+				77F53F8223CB472E000B2340 /* ZATextField.swift in Sources */,
+				77F53F8823CB5043000B2340 /* UIViewController+Ext.swift in Sources */,
+				77F53F8523CB4AD4000B2340 /* ZAButton.swift in Sources */,
+				77F53F7B23CB3FA3000B2340 /* OnboardingVC.swift in Sources */,
+				77F53F9A23CB5D53000B2340 /* ZALocationError.swift in Sources */,
+				77F53F7F23CB4385000B2340 /* ZALogoView.swift in Sources */,
+				77F53F9623CB5B7C000B2340 /* LocationService.swift in Sources */,
+				77F53FA123CB5FA4000B2340 /* TestVC.swift in Sources */,
 				77F53F6623CB3E03000B2340 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +263,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		77F53F6923CB3E03000B2340 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				77F53F6A23CB3E03000B2340 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		77F53F6E23CB3E06000B2340 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -284,17 +392,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HXU4QPBL2H;
-				INFOPLIST_FILE = ZomatoApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ZomatoApp/Support/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.germanhernandez.ZomatoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.german.ZomatoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,17 +413,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HXU4QPBL2H;
-				INFOPLIST_FILE = ZomatoApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ZomatoApp/Support/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.germanhernandez.ZomatoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.german.ZomatoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
