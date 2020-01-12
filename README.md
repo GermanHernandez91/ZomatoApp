@@ -15,7 +15,7 @@ In order to use your own zomato public api key, you need to create a file under 
 ```
 struct Environment {
     struct Variables {
-        let String zomatoApiKey = ""
+        static let zomatoApiKey = ""
     }
 }
 ```
