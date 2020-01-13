@@ -12,6 +12,7 @@ class CuisineCell: UICollectionViewCell {
     static let reuseID = "CuisineCell"
     
     let cuisineLabel = ZATitleLabel(textAlignment: .center, fontSize: 16)
+    let imageView = ZAImageView(imageName: "gradient")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,14 +30,8 @@ class CuisineCell: UICollectionViewCell {
     private func configure() {
         addSubview(cuisineLabel)
         
-        backgroundColor = .systemBlue
-        layer.cornerRadius = 5
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        layer.shadowOpacity = 0.3
-        layer.shadowRadius = 2.0
-        layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
-        
+        backgroundView = imageView
+    
         NSLayoutConstraint.activate([
             cuisineLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             cuisineLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),

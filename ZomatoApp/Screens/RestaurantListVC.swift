@@ -42,7 +42,7 @@ class RestaurantListVC: UIViewController {
         view.addSubview(mostPopularLabel)
         
         NSLayoutConstraint.activate([
-            mostPopularLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 30),
+            mostPopularLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 10),
             mostPopularLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             mostPopularLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             mostPopularLabel.heightAnchor.constraint(equalToConstant: 30),
@@ -50,13 +50,7 @@ class RestaurantListVC: UIViewController {
     }
     
     func configureCellCollectionView() {
-        let flowLayot = UICollectionViewFlowLayout()
-        flowLayot.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        flowLayot.itemSize = CGSize(width: view.frame.width / 3, height: 140)
-        flowLayot.scrollDirection = .horizontal
-        flowLayot.minimumLineSpacing = 10
-        
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayot)
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: UIHelper.generateCollectionCellHorizontalCell(in: view))
         
         view.addSubview(collectionView)
         
@@ -67,7 +61,7 @@ class RestaurantListVC: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: 150),

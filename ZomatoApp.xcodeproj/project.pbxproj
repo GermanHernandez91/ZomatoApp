@@ -31,6 +31,8 @@
 		77F53FC523CB988E000B2340 /* CuisineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53FC423CB988E000B2340 /* CuisineCell.swift */; };
 		77F53FC823CB98DE000B2340 /* ZATitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53FC723CB98DE000B2340 /* ZATitleLabel.swift */; };
 		77F53FCF23CBB8E0000B2340 /* ZAHeadlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F53FCE23CBB8E0000B2340 /* ZAHeadlineLabel.swift */; };
+		DE08EF9523CC9D80007CFF98 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE08EF9423CC9D80007CFF98 /* UIHelper.swift */; };
+		DE08EF9723CCA4DC007CFF98 /* ZAImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE08EF9623CCA4DC007CFF98 /* ZAImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		77F53FC423CB988E000B2340 /* CuisineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisineCell.swift; sourceTree = "<group>"; };
 		77F53FC723CB98DE000B2340 /* ZATitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZATitleLabel.swift; sourceTree = "<group>"; };
 		77F53FCE23CBB8E0000B2340 /* ZAHeadlineLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAHeadlineLabel.swift; sourceTree = "<group>"; };
+		DE08EF9423CC9D80007CFF98 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		DE08EF9623CCA4DC007CFF98 /* ZAImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 		77F53F6223CB3E03000B2340 /* ZomatoApp */ = {
 			isa = PBXGroup;
 			children = (
+				DE08EF9123CC9D55007CFF98 /* Helpers */,
 				77F53FBC23CB87A2000B2340 /* Model */,
 				77F53F8C23CB58A6000B2340 /* Utilities */,
 				77F53FB523CB84D0000B2340 /* Networking */,
@@ -152,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				77F53F7E23CB4385000B2340 /* ZALogoView.swift */,
+				DE08EF9623CCA4DC007CFF98 /* ZAImageView.swift */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -241,6 +247,14 @@
 			path = Labels;
 			sourceTree = "<group>";
 		};
+		DE08EF9123CC9D55007CFF98 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DE08EF9423CC9D80007CFF98 /* UIHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -315,6 +329,7 @@
 				77F53FB023CB7CEE000B2340 /* ProfileVC.swift in Sources */,
 				77F53FB423CB8409000B2340 /* Environment.swift in Sources */,
 				77F53FCF23CBB8E0000B2340 /* ZAHeadlineLabel.swift in Sources */,
+				DE08EF9523CC9D80007CFF98 /* UIHelper.swift in Sources */,
 				77F53FB923CB8641000B2340 /* ZANetworkError.swift in Sources */,
 				77F53F6423CB3E03000B2340 /* AppDelegate.swift in Sources */,
 				77F53F8E23CB58B0000B2340 /* Keys.swift in Sources */,
@@ -323,6 +338,7 @@
 				77F53F8823CB5043000B2340 /* UIViewController+Ext.swift in Sources */,
 				77F53F8523CB4AD4000B2340 /* ZAButton.swift in Sources */,
 				77F53FAE23CB7CE3000B2340 /* SearchVC.swift in Sources */,
+				DE08EF9723CCA4DC007CFF98 /* ZAImageView.swift in Sources */,
 				77F53F7B23CB3FA3000B2340 /* OnboardingVC.swift in Sources */,
 				77F53FB723CB84E0000B2340 /* NetworkManager.swift in Sources */,
 				77F53F9A23CB5D53000B2340 /* ZALocationError.swift in Sources */,
