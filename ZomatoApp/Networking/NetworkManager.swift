@@ -8,38 +8,60 @@
 
 import UIKit
 
+enum HTTMethod: String {
+    case get = "GET"
+}
+
+typealias NetworkResult = (Result<Data, ZANetworkError>) -> Void
+
 class NetworkManager {
     static let shared = NetworkManager()
     
-    private let baseURL = "https://developers.zomato.com/api/v2.1"
+    let baseURL = "https://developers.zomato.com/api/v2.1"
     let cache = NSCache<NSString, UIImage>()
     
     private init() {}
     
-    func getCuisines(completed: @escaping (Result<[CuisineElement], ZANetworkError>) -> Void) {
-        let lat = LocationService.shared.getLatitude()
-        let lon = LocationService.shared.getLongitude()
+    func get(with route: String, parameters: [String: String]?, completed: @escaping NetworkResult) {
         
-        guard let latitude = lat else {
-            completed(.failure(.invalidData))
-            return
-        }
+        guard var url = URL(string: route) else {
+           completed(.failure(.genericError))
+           return
+       }
         
-        guard let longitude = lon else {
-            completed(.failure(.invalidData))
-            return
-        }
-        
-        let endpoint = baseURL + "/cuisines?lat=\(latitude)&lon=\(longitude)"
-        
-        guard let url = URL(string: endpoint) else {
-            completed(.failure(.genericError))
-            return
+        if let parameters = parameters {
+            var queryItems: [URLQueryItem] = []
+            
+            for (key, value) in parameters {
+                queryItems.append(URLQueryItem(name: key, value: value))
+            }
+            
+            var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
+            urlComponents?.queryItems = queryItems
+            
+            guard let urlFormatted = urlComponents?.url else {
+                completed(.failure(.genericError))
+                return
+            }
+            
+            url = urlFormatted
         }
         
         var request = URLRequest(url: url)
+        request.httpMethod = HTTMethod.get.rawValue
         request.setValue(Environment.Variables.zomatoApiKey, forHTTPHeaderField: "user-key")
-
+        
+        performTask(with: request) { result in
+            switch result {
+            case .success(let data):
+                completed(.success(data))
+            case .failure(let error):
+                completed(.failure(error))
+            }
+        }
+    }
+    
+    private func performTask(with request: URLRequest, completed: @escaping NetworkResult) {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let _ = error {
                 completed(.failure(.unableToComplete))
@@ -55,14 +77,7 @@ class NetworkManager {
                 return
             }
             
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let cuisines = try decoder.decode(Cuisines.self, from: data)
-                completed(.success(cuisines.cuisines))
-            } catch {
-                completed(.failure(.invalidData))
-            }
+            completed(.success(data))
         }
         
         task.resume()

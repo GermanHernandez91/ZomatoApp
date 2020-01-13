@@ -14,11 +14,17 @@ class RestaurantListVC: UIViewController {
     
     // MARK: - Variables
     
+    let cuisineService: CuisineService = CuisineService()
+    let restaurantService: RestaurantService = RestaurantService()
+    
+    var restaurants: [Restaurant] = []
     var cuisines: [Cuisine] = []
     var mostPopularLabel = ZAHeadlineLabel(textAlignment: .left, title: "Most Popular")
     var cuisineLabel = ZAHeadlineLabel(textAlignment: .left, title: "Cuisines")
-    var collectionView: UICollectionView!
+    var collectionView: ZACuisineCollection!
+    var tableView: UITableView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Cuisine>!
+    var dataTableSource: UITableViewDiffableDataSource<Section, Restaurant>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +34,11 @@ class RestaurantListVC: UIViewController {
         configureCuisineLabel()
         configureCellCollectionView()
         configureMostPopularLabel()
+        configureCellTableView()
         
         getCuisines()
         configureDataSource()
+        configureTableDataSource()
     }
     
     // MARK: - Layout
@@ -63,15 +71,10 @@ class RestaurantListVC: UIViewController {
     }
     
     func configureCellCollectionView() {
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: UIHelper.generateCollectionCellHorizontalCell(in: view))
+        collectionView = ZACuisineCollection(frame: .zero, collectionViewLayout: UIHelper.generateCollectionCellHorizontalCell(in: view))
         
         view.addSubview(collectionView)
-        
         collectionView.delegate = self
-        collectionView.backgroundColor = .systemBackground
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(CuisineCell.self, forCellWithReuseIdentifier: CuisineCell.reuseID)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: cuisineLabel.bottomAnchor),
@@ -81,15 +84,27 @@ class RestaurantListVC: UIViewController {
         ])
     }
     
+    func configureCellTableView() {
+        tableView = ZARestaurantTable(frame: .zero, style: .plain)
+        
+        view.addSubview(tableView)
+        tableView.delegate = self
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: mostPopularLabel.bottomAnchor, constant: 10),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+        ])
+    }
+    
     // MARK: - Methods
     
     func getCuisines() {
         showLoadingView()
         
-        NetworkManager.shared.getCuisines { [weak self] result in
+        cuisineService.getCuisines { [weak self] result in
             guard let self = self else { return }
-            
-            self.dismissLoadingView()
             
             switch result {
             case .success(let cuisines):
@@ -97,6 +112,25 @@ class RestaurantListVC: UIViewController {
                     self.cuisines.append(cuisine.cuisine)
                 }
                 self.updateData()
+                self.getRestaurants()
+            case .failure(let error):
+                self.showErrorDialog(title: Constants.Errors.genericTitle, message: error.rawValue)
+            }
+        }
+    }
+    
+    func getRestaurants() {
+        restaurantService.getRestaurantsByCity(limit: 10) { [weak self] result in
+            guard let self = self else { return }
+            
+            self.dismissLoadingView()
+            
+            switch result {
+            case .success(let collections):
+                for restaurant in collections {
+                    self.restaurants.append(restaurant.collection)
+                }
+                self.updateTableData()
             case .failure(let error):
                 self.showErrorDialog(title: Constants.Errors.genericTitle, message: error.rawValue)
             }
@@ -108,6 +142,21 @@ class RestaurantListVC: UIViewController {
         snapshot.appendSections([.main])
         snapshot.appendItems(cuisines)
         DispatchQueue.main.async { self.dataSource.apply(snapshot, animatingDifferences: true) }
+    }
+    
+    func updateTableData() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Restaurant>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(restaurants)
+        DispatchQueue.main.async { self.dataTableSource.apply(snapshot, animatingDifferences: true) }
+    }
+    
+    func configureTableDataSource() {
+        dataTableSource = UITableViewDiffableDataSource<Section, Restaurant>(tableView: tableView, cellProvider: { (tableView, indexPath, restaurant) -> UITableViewCell? in
+            let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantCell.reuseID, for: indexPath) as! RestaurantCell
+            cell.set(restaurant: restaurant)
+            return cell
+        })
     }
     
     func configureDataSource() {
@@ -131,3 +180,16 @@ extension RestaurantListVC: UICollectionViewDelegate {
     
 }
 
+// MARK: - UITableViewDelegate
+
+extension RestaurantListVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 100
+    }
+    
+}
