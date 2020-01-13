@@ -34,7 +34,7 @@ class ZAHeadlineLabel: UILabel {
         minimumScaleFactor = 0.90
         lineBreakMode = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
-        font = UIFont.systemFont(ofSize: 26, weight: .bold)
+        font = UIFont.systemFont(ofSize: 24, weight: .bold)
     }
     
 }

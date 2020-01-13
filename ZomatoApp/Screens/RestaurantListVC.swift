@@ -16,6 +16,7 @@ class RestaurantListVC: UIViewController {
     
     var cuisines: [Cuisine] = []
     var mostPopularLabel = ZAHeadlineLabel(textAlignment: .left, title: "Most Popular")
+    var cuisineLabel = ZAHeadlineLabel(textAlignment: .left, title: "Cuisines")
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Cuisine>!
 
@@ -24,6 +25,7 @@ class RestaurantListVC: UIViewController {
 
         setupUI()
         
+        configureCuisineLabel()
         configureCellCollectionView()
         configureMostPopularLabel()
         
@@ -36,6 +38,17 @@ class RestaurantListVC: UIViewController {
     func setupUI() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    func configureCuisineLabel() {
+        view.addSubview(cuisineLabel)
+        
+        NSLayoutConstraint.activate([
+            cuisineLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            cuisineLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            cuisineLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            cuisineLabel.heightAnchor.constraint(equalToConstant: 50),
+        ])
     }
     
     func configureMostPopularLabel() {
@@ -61,7 +74,7 @@ class RestaurantListVC: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            collectionView.topAnchor.constraint(equalTo: cuisineLabel.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: 150),
